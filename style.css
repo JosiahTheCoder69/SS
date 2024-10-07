@@ -1,47 +1,125 @@
-
+/* Reset margins and padding */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Styling the body for better readability and spacing */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
-    color: #333;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #e9ecef; /* Lighter background for better readability */
+    color: #343a40;
     line-height: 1.6;
+    padding-bottom: 60px; /* Prevent footer overlap */
 }
 
+/* Header styling for visual appeal */
 header {
     background-color: #4CAF50;
     color: white;
-    padding: 10px 0;
-    text-align: center;
-}
-
-main {
     padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a slight shadow for depth */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
+/* Main content with spacing and readability in mind */
+main {
+    padding: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Section styling with consistent spacing */
 section {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
+/* Main heading styling */
 h1 {
-    font-size: 2em;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    font-weight: bold;
 }
 
+/* Secondary heading with more contrast */
 h2 {
-    font-size: 1.5em;
-    color: #4CAF50;
+    font-size: 1.75em;
+    color: #28a745;
+    margin-bottom: 10px;
 }
 
+/* Links are more visible and intuitive */
+a {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+/* Footer improvements for better clarity */
 footer {
-    background-color: #333;
+    background-color: #343a40;
     color: white;
     text-align: center;
-    padding: 10px 0;
+    padding: 15px 0;
     position: fixed;
-    width: 100%;
     bottom: 0;
+    width: 100%;
+    font-size: 0.9em;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Adding button styles for interactive elements */
+button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1em;
+    margin: 10px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Media query for mobile responsiveness */
+@media (max-width: 768px) {
+    body {
+        padding: 20px;
+    }
+
+    header {
+        font-size: 1.2em;
+    }
+
+    main {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    footer {
+        font-size: 0.8em;
+    }
 }
