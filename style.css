@@ -1,125 +1,126 @@
-/* Reset margins and padding */
+/* Global Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Styling the body for better readability and spacing */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #e9ecef; /* Lighter background for better readability */
-    color: #343a40;
-    line-height: 1.6;
-    padding-bottom: 60px; /* Prevent footer overlap */
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: #f7f9fc; /* Subtle background color for contrast */
+    color: #2e3a47;
+    line-height: 1.7;
+    padding: 20px 0; /* Padding for scrollable content */
 }
 
-/* Header styling for visual appeal */
+/* Header with more modern look */
 header {
-    background-color: #4CAF50;
+    background-color: #1abc9c;
     color: white;
-    padding: 20px;
+    padding: 20px 0;
     text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a slight shadow for depth */
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Adds a smooth shadow */
+    font-size: 1.2rem;
+    position: relative;
 }
 
-/* Main content with spacing and readability in mind */
+header h1 {
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* Centralized Main Content */
 main {
-    padding: 30px;
-    max-width: 1200px;
-    margin: 0 auto;
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px;
 }
 
-/* Section styling with consistent spacing */
 section {
-    margin-bottom: 30px;
+    margin-bottom: 40px;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Main heading styling */
-h1 {
-    font-size: 2.5em;
-    margin-bottom: 20px;
-    font-weight: bold;
-}
-
-/* Secondary heading with more contrast */
 h2 {
-    font-size: 1.75em;
-    color: #28a745;
-    margin-bottom: 10px;
+    font-size: 1.8rem;
+    color: #1abc9c;
+    margin-bottom: 15px;
 }
 
-/* Links are more visible and intuitive */
+p {
+    font-size: 1rem;
+    color: #4d5a68;
+    margin-bottom: 20px;
+}
+
+/* Link Styling */
 a {
-    color: #007bff;
+    color: #3498db;
     text-decoration: none;
-    transition: color 0.3s ease;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
 }
 
 a:hover {
-    color: #0056b3;
-    text-decoration: underline;
+    border-bottom: 2px solid #3498db;
+    color: #2980b9;
 }
 
-/* Footer improvements for better clarity */
-footer {
-    background-color: #343a40;
-    color: white;
-    text-align: center;
-    padding: 15px 0;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    font-size: 0.9em;
-    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* Adding button styles for interactive elements */
+/* Buttons for interactive elements */
 button {
-    background-color: #4CAF50;
-    border: none;
+    background-color: #1abc9c;
     color: white;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 1em;
-    margin: 10px 2px;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 25px;
+    font-size: 1rem;
     cursor: pointer;
-    border-radius: 5px;
     transition: background-color 0.3s ease;
+    text-transform: uppercase;
 }
 
 button:hover {
-    background-color: #45a049;
+    background-color: #16a085;
 }
 
-/* Media query for mobile responsiveness */
-@media (max-width: 768px) {
-    body {
-        padding: 20px;
-    }
+/* Footer Styling */
+footer {
+    background-color: #2e3a47;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 0.9rem;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
 
-    header {
-        font-size: 1.2em;
+/* Improve typography and add subtle emphasis */
+h1, h2, h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    color: #333;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
     }
 
     main {
-        padding: 15px;
-    }
-
-    h1 {
-        font-size: 2em;
+        padding: 0 15px;
     }
 
     h2 {
-        font-size: 1.5em;
+        font-size: 1.6rem;
     }
 
     footer {
-        font-size: 0.8em;
+        font-size: 0.8rem;
     }
 }
