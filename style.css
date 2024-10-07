@@ -61,3 +61,14 @@ main p {
     font-size: 1.2rem;
     margin-top: 30px;
 }
+
+/* Styling for the video section */
+.video-container {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+iframe {
+    max-width: 100%;
+    height: auto;
+}
