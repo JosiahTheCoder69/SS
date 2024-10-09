@@ -292,3 +292,30 @@ footer a:hover {
     background-color: #e74c3c;
     transform: rotateY(180deg);
 }
+/* === Footer (White, Fixed at Bottom) === */
+footer {
+    background-color: #ffffff; /* White background */
+    color: #2c3e50; /* Dark text for contrast */
+    text-align: center;
+    padding: 20px;
+    font-size: 1rem;
+    position: absolute; /* Adjust to absolute */
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    border-top: 1px solid #ddd; /* Subtle border for separation */
+}
+
+footer p {
+    margin: 0;
+}
+
+footer a {
+    color: #1abc9c;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #16a085;
+}
