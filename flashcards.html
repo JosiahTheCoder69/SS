@@ -6,44 +6,60 @@
     <title>Flashcards - Social Studies</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Additional styles for flashcards */
+        /* Flashcards Styling */
         .flashcard-container {
             display: flex;
             flex-direction: column;
             align-items: center;
+            justify-content: center;
             margin: 50px auto;
-            max-width: 400px;
+            max-width: 600px; /* Limit width to prevent cards from stretching too wide */
         }
 
         .flashcard {
             width: 100%;
-            height: 200px;
+            height: 250px; /* Taller card for more content */
             background-color: #3498db;
             border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            position: relative;
+            transform-style: preserve-3d;
+            transform: rotateY(0);
+            transition: transform 0.8s ease-in-out;
+            cursor: pointer;
+            margin-bottom: 20px; /* Space between cards */
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
+        }
+
+        .flashcard.flip {
+            transform: rotateY(180deg);
+        }
+
+        .flashcard .front,
+        .flashcard .back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
             font-size: 1.5rem;
-            position: relative;
-            transition: transform 0.6s ease;
-            cursor: pointer;
+            color: white;
+            text-align: center;
+        }
+
+        .flashcard .front {
+            background-color: #3498db;
         }
 
         .flashcard .back {
             background-color: #e74c3c;
-            display: none; /* Hidden by default */
-        }
-
-        .flashcard.flip .back {
-            display: flex; /* Show back on flip */
-            align-items: center;
-            justify-content: center;
-        }
-
-        .flashcard.flip .front {
-            display: none; /* Hide front on flip */
+            transform: rotateY(180deg);
         }
     </style>
 </head>
@@ -51,23 +67,43 @@
     <header>
         <h1>Flashcards - Social Studies</h1>
     </header>
+
     <main>
         <div class="flashcard-container">
+            <!-- Flashcard 1 -->
             <div class="flashcard" onclick="this.classList.toggle('flip')">
                 <div class="front">What was the primary cause of World War I?</div>
                 <div class="back">The assassination of Archduke Franz Ferdinand.</div>
             </div>
+
+            <!-- Flashcard 2 -->
             <div class="flashcard" onclick="this.classList.toggle('flip')">
                 <div class="front">What is the Treaty of Versailles?</div>
                 <div class="back">A peace treaty that ended World War I and imposed harsh reparations on Germany.</div>
             </div>
+
+            <!-- Flashcard 3 -->
             <div class="flashcard" onclick="this.classList.toggle('flip')">
                 <div class="front">What was a major result of the Great Depression?</div>
                 <div class="back">Widespread unemployment and economic hardship across the globe.</div>
             </div>
+
+            <!-- Flashcard 4 -->
+            <div class="flashcard" onclick="this.classList.toggle('flip')">
+                <div class="front">What environmental issue affects Germany?</div>
+                <div class="back">Acid rain caused by industrial pollution.</div>
+            </div>
+
+            <!-- Flashcard 5 -->
+            <div class="flashcard" onclick="this.classList.toggle('flip')">
+                <div class="front">What major river runs through central Europe?</div>
+                <div class="back">The Danube River.</div>
+            </div>
         </div>
+
         <a href="index.html" class="home-button">Home</a>
     </main>
+
     <footer>
         <p>&copy; 2024 Social Studies Project | Created by <a href="#">Josiah Middleton</a></p>
     </footer>
