@@ -13,12 +13,12 @@
             align-items: center;
             justify-content: center;
             margin: 50px auto;
-            max-width: 600px; /* Limit width to prevent cards from stretching too wide */
+            max-width: 600px;
         }
 
         .flashcard {
             width: 100%;
-            height: 250px; /* Taller card for more content */
+            height: 250px;
             background-color: #3498db;
             border-radius: 10px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -26,40 +26,54 @@
             transform-style: preserve-3d;
             transform: rotateY(0);
             transition: transform 0.8s ease-in-out;
-            cursor: pointer;
-            margin-bottom: 20px; /* Space between cards */
+            margin-bottom: 20px;
             display: flex;
             align-items: center;
             justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            text-align: center;
         }
 
         .flashcard.flip {
             transform: rotateY(180deg);
         }
 
-        .flashcard .front,
-        .flashcard .back {
+        .flashcard .front, .flashcard .back {
             position: absolute;
             width: 100%;
             height: 100%;
             backface-visibility: hidden;
-            border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
             padding: 20px;
-            font-size: 1.5rem;
-            color: white;
-            text-align: center;
-        }
-
-        .flashcard .front {
-            background-color: #3498db;
+            border-radius: 10px;
         }
 
         .flashcard .back {
             background-color: #e74c3c;
             transform: rotateY(180deg);
+        }
+
+        .controls {
+            margin-top: 20px;
+        }
+
+        .controls button {
+            padding: 10px 20px;
+            border-radius: 8px;
+            border: none;
+            background-color: #2c3e50;
+            color: white;
+            font-size: 1rem;
+            margin: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .controls button:hover {
+            background-color: #34495e;
         }
     </style>
 </head>
@@ -70,42 +84,52 @@
 
     <main>
         <div class="flashcard-container">
-            <!-- Flashcard 1 -->
-            <div class="flashcard" onclick="this.classList.toggle('flip')">
+            <div id="flashcard" class="flashcard">
                 <div class="front">What was the primary cause of World War I?</div>
                 <div class="back">The assassination of Archduke Franz Ferdinand.</div>
             </div>
 
-            <!-- Flashcard 2 -->
-            <div class="flashcard" onclick="this.classList.toggle('flip')">
-                <div class="front">What is the Treaty of Versailles?</div>
-                <div class="back">A peace treaty that ended World War I and imposed harsh reparations on Germany.</div>
-            </div>
-
-            <!-- Flashcard 3 -->
-            <div class="flashcard" onclick="this.classList.toggle('flip')">
-                <div class="front">What was a major result of the Great Depression?</div>
-                <div class="back">Widespread unemployment and economic hardship across the globe.</div>
-            </div>
-
-            <!-- Flashcard 4 -->
-            <div class="flashcard" onclick="this.classList.toggle('flip')">
-                <div class="front">What environmental issue affects Germany?</div>
-                <div class="back">Acid rain caused by industrial pollution.</div>
-            </div>
-
-            <!-- Flashcard 5 -->
-            <div class="flashcard" onclick="this.classList.toggle('flip')">
-                <div class="front">What major river runs through central Europe?</div>
-                <div class="back">The Danube River.</div>
+            <div class="controls">
+                <button id="flipButton">Flip Card</button>
+                <button id="nextButton">Next Card</button>
             </div>
         </div>
-
         <a href="index.html" class="home-button">Home</a>
     </main>
 
     <footer>
         <p>&copy; 2024 Social Studies Project | Created by <a href="#">Josiah Middleton</a></p>
     </footer>
+
+    <script>
+        // Flashcard Data
+        const flashcards = [
+            { front: "What was the primary cause of World War I?", back: "The assassination of Archduke Franz Ferdinand." },
+            { front: "What is the Treaty of Versailles?", back: "A peace treaty that ended World War I and imposed harsh reparations on Germany." },
+            { front: "What was a major result of the Great Depression?", back: "Widespread unemployment and economic hardship across the globe." },
+            { front: "What environmental issue affects Germany?", back: "Acid rain caused by industrial pollution." },
+            { front: "What major river runs through central Europe?", back: "The Danube River." },
+            { front: "What event triggered World War II?", back: "The invasion of Poland by Nazi Germany." },
+            { front: "What was the Cold War?", back: "A period of geopolitical tension between the U.S. and the Soviet Union after World War II." },
+        ];
+
+        let currentCardIndex = 0;
+        const flashcard = document.getElementById("flashcard");
+        const flipButton = document.getElementById("flipButton");
+        const nextButton = document.getElementById("nextButton");
+
+        // Flip the card
+        flipButton.addEventListener("click", () => {
+            flashcard.classList.toggle("flip");
+        });
+
+        // Show next card
+        nextButton.addEventListener("click", () => {
+            flashcard.classList.remove("flip"); // Ensure it's on the front before switching
+            currentCardIndex = (currentCardIndex + 1) % flashcards.length;
+            flashcard.querySelector(".front").textContent = flashcards[currentCardIndex].front;
+            flashcard.querySelector(".back").textContent = flashcards[currentCardIndex].back;
+        });
+    </script>
 </body>
 </html>
