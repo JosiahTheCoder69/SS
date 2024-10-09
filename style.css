@@ -7,7 +7,7 @@
     box-sizing: border-box;
 }
 
-/* Ensure html and body take up the full height of the viewport */
+/* Ensure html and body take up full height of the viewport */
 html, body {
     height: 100%;
     display: flex;
@@ -22,10 +22,30 @@ body {
     line-height: 1.6;
 }
 
-/* Main content */
+/* Main content should grow to push the footer down */
 main {
     flex: 1; /* This allows main to grow and push the footer down */
-    padding-bottom: 50px; /* Prevents overlap with footer */
+}
+
+/* Header */
+header {
+    background-color: #34495e;
+    color: white;
+    text-align: center;
+    padding: 40px 0;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Unit Container */
+.unit-container {
+    max-width: 1000px;
+    margin: 40px auto; /* Centering */
+    padding: 30px;
+    background-color: #ffffff; /* White background for content */
+    border-radius: 12px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
 
 /* Headings */
@@ -33,7 +53,11 @@ h1, h2 {
     color: #2c3e50;
     font-weight: bold;
     margin-bottom: 20px;
-    text-align: center;
+    text-align: center; /* Center align headings */
+}
+
+h2 {
+    font-size: 1.8rem; /* Adjust heading size for sections */
 }
 
 p {
@@ -86,62 +110,6 @@ button:hover, .button:hover {
 
 .home-button:hover {
     background-color: #34495e;
-    text-decoration: none;
-}
-
-/* === Header === */
-header {
-    background-color: #34495e;
-    color: white;
-    text-align: center;
-    padding: 40px 0;
-    font-size: 2.5rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-/* === Main Content === */
-
-.unit-container {
-    max-width: 1000px;
-    margin: 40px auto;
-    padding: 30px;
-    background-color: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-}
-
-.unit-title {
-    color: #2c3e50;
-    text-align: center;
-    font-size: 2.2rem;
-    margin-bottom: 20px;
-}
-
-.section {
-    margin-bottom: 30px;
-}
-
-.section h2 {
-    font-size: 1.8rem;
-    color: #2980b9;
-    margin-bottom: 15px;
-}
-
-.section p, .section ul {
-    color: #555;
-    font-size: 1.1rem;
-    margin-bottom: 20px;
-    line-height: 1.8;
-}
-
-.section ul {
-    padding-left: 20px;
-}
-
-.section ul li {
-    margin-bottom: 10px;
 }
 
 /* === Footer === */
@@ -152,6 +120,7 @@ footer {
     padding: 20px;
     font-size: 1rem;
     border-top: 1px solid #ddd; /* Subtle border for separation */
+    margin-top: auto; /* Ensures footer stays at the bottom */
 }
 
 footer p {
