@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flashcards - Social Studies Project</title>
+    <link rel="stylesheet" href="style.css"> <!-- Ensure the correct path to your CSS -->
+    <style>
+        /* Reset CSS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f7f9;
+            color: #2c3e50;
+            line-height: 1.7;
+        }
+
+        /* Header Section */
+        header {
+            background-color: #1abc9c;
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+            font-size: 1.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* Navigation */
+        nav {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            background-color: #1abc9c;
+            border-radius: 25px;
+        }
+
+        nav a:hover {
+            background-color: #16a085;
+        }
+
+        /* Flashcard Container */
+        .flashcard-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 50px auto;
+        }
+
+        .flashcard {
+            width: 300px;
+            height: 200px;
+            perspective: 1000px; /* Gives a 3D effect */
+            margin-bottom: 20px;
+        }
+
+        .flashcard .front,
+        .flashcard .back {
+            width: 100%;
+            height: 100%;
+            background-color: #1abc9c;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            position: absolute; /* Position absolute for overlapping */
+            backface-visibility: hidden; /* Hides the back when facing away */
+            transition: transform 0.6s; /* Smooth transition for flipping */
+        }
+
+        .flashcard .back {
+            background-color: #3498db; /* Different background for the back */
+            transform: rotateY(180deg); /* Rotate back by default */
+        }
+
+        .flashcard.flip .front {
+            transform: rotateY(180deg); /* Rotate front when flipped */
+        }
+
+        .flashcard.flip .back {
+            transform: rotateY(0); /* Rotate back to show back */
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #1abc9c;
+            color: white;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #16a085; /* Darker shade on hover */
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #34495e;
+            color: white;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Flashcards</h1>
+    </header>
+
+    <nav>
+        <a href="index.html" class="button home-button">Home</a>
+        <a href="videos.html" class="button">Videos</a>
+    </nav>
+
+    <main>
+        <div class="flashcard-container">
+            <div class="flashcard" id="flashcard1">
+                <div class="front">
+                    <h2>What was the primary reason for Germany's economic collapse after World War I?</h2>
+                </div>
+                <div class="back">
+                    <h2>Reparations imposed by the Treaty of Versailles.</h2>
+                </div>
+            </div>
+
+            <div class="flashcard" id="flashcard2">
+                <div class="front">
+                    <h2>What significant event in 1923 exemplified Germany's economic crisis?</h2>
+                </div>
+                <div class="back">
+                    <h2>The hyperinflation crisis.</h2>
+                </div>
+            </div>
+
+            <div class="flashcard" id="flashcard3">
+                <div class="front">
+                    <h2>What were some social impacts of Germany's economic chaos?</h2>
+                </div>
+                <div class="back">
+                    <h2>Increased unemployment and civil unrest.</h2>
+                </div>
+            </div>
+
+            <div class="flashcard" id="flashcard4">
+                <div class="front">
+                    <h2>How did Germany's economic turmoil affect other countries?</h2>
+                </div>
+                <div class="back">
+                    <h2>It triggered a worldwide depression.</h2>
+                </div>
+            </div>
+
+            <div class="flashcard" id="flashcard5">
+                <div class="front">
+                    <h2>What event marked the beginning of the Great Depression in the U.S.?</h2>
+                </div>
+                <div class="back">
+                    <h2>The stock market crash of October 1929.</h2>
+                </div>
+            </div>
+
+            <div class="flashcard" id="flashcard6">
+                <div class="front">
+                    <h2>What was one major cause of the Great Depression?</h2>
+                </div>
+                <div class="back">
+                    <h2>Over-speculation in the stock market.</h2>
+                </div>
+            </div>
+
+            <div class="flashcard" id="flashcard7">
+                <div class="front">
+                    <h2>What was a significant consequence of the Great Depression on global economies?</h2>
+                </div>
+                <div class="back">
+                    <h2>The closure of U.S. banks caused bank runs in other nations.</h2>
+                </div>
+            </div>
+
+            <div class="flashcard" id="flashcard8">
+                <div class="front">
+                    <h2>What were key provisions of the Treaty of Versailles imposed on Germany?</h2>
+                </div>
+                <div class="back">
+                    <h2>Full responsibility for the war and reparations.</h2>
+                </div>
+            </div>
+
+            <div class="flashcard" id="flashcard9">
+                <div class="front">
+                    <h2>How did many Germans perceive the Treaty of Versailles?</h2>
+                </div>
+                <div class="back">
+                    <h2>As a Diktat (dictated peace).</h2>
+                </div>
+            </div>
+
+            <div class="flashcard" id="flashcard10">
+                <div class="front">
+                    <h2>What did the harsh terms of the Treaty of Versailles contribute to in Germany?</h2>
+                </div>
+                <div class="back">
+                    <h2>The rise of political extremism.</h2>
+                </div>
+            </div>
+
+            <button id="flip-button">Flip Cards</button>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Social Studies Project | Created by <a href="#">Josiah Middleton</a></p>
+    </footer>
+
+    <script>
+        document.getElementById('flip-button').addEventListener('click', function() {
+            const flashcards = document.querySelectorAll('.flashcard');
+            flashcards.forEach((flashcard) => {
+                flashcard.classList.toggle('flip'); // Toggle the 'flip' class for each card
+            });
+        });
+    </script>
+</body>
+</html>
