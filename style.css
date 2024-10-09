@@ -1,3 +1,5 @@
+/* === 1. Global Styles === */
+
 /* Reset CSS */
 * {
     margin: 0;
@@ -5,6 +7,7 @@
     box-sizing: border-box;
 }
 
+/* Body and Typography */
 body {
     font-family: 'Roboto', sans-serif;
     background-color: #f4f7f9;
@@ -13,23 +16,49 @@ body {
     padding-bottom: 100px; /* Prevents overlap with footer */
 }
 
+/* Headings */
+h1, h2 {
+    color: #1abc9c;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+p {
+    color: #34495e;
+}
+
+/* Button Styles */
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #1abc9c;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+    background-color: #16a085;
+    transform: translateY(-3px); /* Adds a little pop when hovered */
+}
+
+/* === 2. Header and Navigation === */
+
 /* Header Section */
 header {
     background-color: #1abc9c;
     color: white;
     text-align: center;
     padding: 30px 0;
-    font-size: 1.8rem;
+    font-size: 2.5rem;
     text-transform: uppercase;
     letter-spacing: 2px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     position: sticky;
     top: 0;
     z-index: 1000;
-}
-
-header h1 {
-    font-size: 2.5rem;
 }
 
 /* Navigation Bar */
@@ -58,7 +87,8 @@ nav a:hover {
     text-decoration: underline;
 }
 
-/* Flashcard Container */
+/* === 3. Flashcard Section === */
+
 .flashcard-container {
     display: flex;
     flex-direction: column;
@@ -104,23 +134,8 @@ nav a:hover {
     transform: rotateY(0); /* Rotate back to show back */
 }
 
-/* Buttons for Flashcards and Navigation */
-button {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    background-color: #1abc9c;
-    color: white;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
+/* === 4. Video Section === */
 
-button:hover {
-    background-color: #16a085; /* Darker shade on hover */
-}
-
-/* Video Container */
 .video-container {
     margin: 40px 0;
     text-align: center;
@@ -135,7 +150,8 @@ iframe {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Login and Registration Forms */
+/* === 5. Forms (Login and Registration) === */
+
 .login-container, .register-container {
     max-width: 400px; /* Fixed width for the forms */
     margin: 50px auto; /* Centering */
@@ -184,7 +200,8 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
     background-color: #16a085; /* Darker shade on hover */
 }
 
-/* Footer (Watermark) */
+/* === 6. Footer === */
+
 footer {
     background-color: #34495e;
     color: white;
