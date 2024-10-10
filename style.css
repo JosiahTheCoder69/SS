@@ -135,3 +135,65 @@ footer a {
 footer a:hover {
     color: #16a085;
 }
+.unit-container {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.unit-title {
+    color: #2c3e50;
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+}
+
+.section {
+    margin-bottom: 30px;
+}
+
+.section h2 {
+    font-size: 1.8rem;
+    color: #2980b9;
+    margin-bottom: 15px;
+}
+
+.section ul {
+    padding-left: 20px;
+}
+
+.section ul li {
+    margin-bottom: 10px;
+}
+
+.home-button {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 30px;
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 30px;
+    transition: background-color 0.3s ease;
+}
+
+.home-button:hover {
+    background-color: #34495e;
+    text-decoration: none;
+}
+
+footer {
+    background-color: #ffffff;
+    color: #2c3e50;
+    text-align: center;
+    padding: 20px;
+    font-size: 1rem;
+    border-top: 1px solid #ddd;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
