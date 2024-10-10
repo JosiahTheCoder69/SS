@@ -75,14 +75,29 @@
         .controls button:hover {
             background-color: #34495e;
         }
+
+        .home-button {
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 30px;
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            font-weight: bold;
+            margin-top: 30px;
+            transition: background-color 0.3s ease;
+        }
+
+        .home-button:hover {
+            background-color: #34495e;
+            text-decoration: none;
+        }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Flashcards - Social Studies</h1>
-    </header>
+    <div class="unit-container">
+        <h1 class="unit-title">Flashcards - Social Studies</h1>
 
-    <main>
         <div class="flashcard-container">
             <div id="flashcard" class="flashcard">
                 <div class="front">What was the primary cause of World War I?</div>
@@ -90,12 +105,14 @@
             </div>
 
             <div class="controls">
+                <button id="backButton">Back</button>
                 <button id="flipButton">Flip Card</button>
-                <button id="nextButton">Next Card</button>
+                <button id="nextButton">Next</button>
             </div>
         </div>
+
         <a href="index.html" class="home-button">Home</a>
-    </main>
+    </div>
 
     <footer>
         <p>&copy; 2024 Social Studies Project | Created by <a href="#">Josiah Middleton</a></p>
@@ -117,6 +134,7 @@
         const flashcard = document.getElementById("flashcard");
         const flipButton = document.getElementById("flipButton");
         const nextButton = document.getElementById("nextButton");
+        const backButton = document.getElementById("backButton");
 
         // Flip the card
         flipButton.addEventListener("click", () => {
@@ -127,6 +145,14 @@
         nextButton.addEventListener("click", () => {
             flashcard.classList.remove("flip"); // Ensure it's on the front before switching
             currentCardIndex = (currentCardIndex + 1) % flashcards.length;
+            flashcard.querySelector(".front").textContent = flashcards[currentCardIndex].front;
+            flashcard.querySelector(".back").textContent = flashcards[currentCardIndex].back;
+        });
+
+        // Show previous card
+        backButton.addEventListener("click", () => {
+            flashcard.classList.remove("flip"); // Ensure it's on the front before switching
+            currentCardIndex = (currentCardIndex - 1 + flashcards.length) % flashcards.length;
             flashcard.querySelector(".front").textContent = flashcards[currentCardIndex].front;
             flashcard.querySelector(".back").textContent = flashcards[currentCardIndex].back;
         });
