@@ -3,10 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flashcards - Social Studies</title>
+    <title>Flashcards - Modern Latin America</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Flashcards Styling */
         .flashcard-container {
             display: flex;
             flex-direction: column;
@@ -33,13 +32,15 @@
             color: white;
             font-size: 1.5rem;
             text-align: center;
+            cursor: pointer;
         }
 
         .flashcard.flip {
             transform: rotateY(180deg);
         }
 
-        .flashcard .front, .flashcard .back {
+        .flashcard .front,
+        .flashcard .back {
             position: absolute;
             width: 100%;
             height: 100%;
@@ -75,69 +76,49 @@
         .controls button:hover {
             background-color: #34495e;
         }
-
-        .home-button {
-            display: inline-block;
-            padding: 10px 20px;
-            border-radius: 30px;
-            background-color: #2c3e50;
-            color: white;
-            text-align: center;
-            font-weight: bold;
-            margin-top: 30px;
-            transition: background-color 0.3s ease;
-        }
-
-        .home-button:hover {
-            background-color: #34495e;
-            text-decoration: none;
-        }
     </style>
 </head>
 <body>
-    <div class="unit-container">
-        <h1 class="unit-title">Flashcards - Social Studies</h1>
+    <header>
+        <h1>Flashcards - Modern Latin America</h1>
+    </header>
 
+    <main>
         <div class="flashcard-container">
             <div id="flashcard" class="flashcard">
-                <div class="front">What was the primary cause of World War I?</div>
-                <div class="back">The assassination of Archduke Franz Ferdinand.</div>
+                <div class="front">What is a major cause of poverty in Latin America?</div>
+                <div class="back">Inequalities in wealth distribution leave many people in poverty.</div>
             </div>
 
             <div class="controls">
-                <button id="backButton">Back</button>
                 <button id="flipButton">Flip Card</button>
-                <button id="nextButton">Next</button>
+                <button id="nextButton">Next Card</button>
             </div>
         </div>
-
         <a href="index.html" class="home-button">Home</a>
-    </div>
+    </main>
 
     <footer>
-        <p>&copy; 2024 Social Studies Project | Created by <a href="#">Josiah Middleton</a></p>
+        <p>&copy; 2024 Social Studies Project | Created by Josiah Middleton</p>
     </footer>
 
     <script>
-        // Flashcard Data
         const flashcards = [
-            { front: "What was the primary cause of World War I?", back: "The assassination of Archduke Franz Ferdinand." },
-            { front: "What is the Treaty of Versailles?", back: "A peace treaty that ended World War I and imposed harsh reparations on Germany." },
-            { front: "What were the main consequences of the Treaty of Versailles?", back: "Reparations, loss of land, and restrictions on Germany's military." },
-            { front: "What was a major result of the Great Depression?", back: "Widespread unemployment and economic hardship across the globe." },
-            { front: "How did the Great Depression affect Germany?", back: "Hyperinflation, unemployment, and increased poverty." },
-            { front: "What was the Holocaust?", back: "The genocide of six million Jews by Nazi Germany during World War II." },
-            { front: "What was the Einsatzgruppen?", back: "Nazi death squads responsible for mass shootings of Jews and others." },
-            { front: "What groups were targeted during the Holocaust?", back: "Jews, Roma, disabled individuals, Soviet POWs, and others." },
-            { front: "What was the global impact of the Great Depression?", back: "It caused economic struggles worldwide, leading to protectionist policies and decreased trade." },
-            { front: "How did the Treaty of Versailles lead to World War II?", back: "The harsh conditions fueled resentment in Germany, contributing to the rise of Adolf Hitler and the Nazis." },
-            { front: "Why does most of Latin America speak Spanish?", back: "Most of Latin America speaks Spanish due to colonization by Spain." }",
+            { front: "What is a major cause of poverty in Latin America?", back: "Inequalities in wealth distribution leave many people in poverty." },
+            { front: "How has the war on drugs impacted Latin America?", back: "It has caused violence and instability in countries like Mexico and Colombia." },
+            { front: "Why do many Latin Americans migrate to the U.S.?", back: "They seek better opportunities due to poverty, violence, and instability." },
+            { front: "What is the significance of the Amazon River?", back: "It is one of the world’s largest rivers and a vital resource for trade and the environment." },
+            { front: "What is voluntary trade?", back: "It benefits buyers and sellers by allowing countries to specialize in goods they produce efficiently." },
+            { front: "What is the role of NAFTA in Latin America?", back: "It facilitated free trade between Mexico, the U.S., and Canada." },
+            { front: "How does literacy rate affect GDP?", back: "Higher literacy rates lead to a more skilled workforce, boosting GDP and economic growth." },
+            { front: "What are examples of Latin American exports?", back: "Coffee from Brazil, copper from Chile, and beef from Argentina." },
+            { front: "What is specialization?", back: "Focusing on producing specific goods to trade efficiently with others." }
+        ];
 
         let currentCardIndex = 0;
         const flashcard = document.getElementById("flashcard");
         const flipButton = document.getElementById("flipButton");
         const nextButton = document.getElementById("nextButton");
-        const backButton = document.getElementById("backButton");
 
         // Flip the card
         flipButton.addEventListener("click", () => {
@@ -146,16 +127,8 @@
 
         // Show next card
         nextButton.addEventListener("click", () => {
-            flashcard.classList.remove("flip"); // Ensure it's on the front before switching
+            flashcard.classList.remove("flip");
             currentCardIndex = (currentCardIndex + 1) % flashcards.length;
-            flashcard.querySelector(".front").textContent = flashcards[currentCardIndex].front;
-            flashcard.querySelector(".back").textContent = flashcards[currentCardIndex].back;
-        });
-
-        // Show previous card
-        backButton.addEventListener("click", () => {
-            flashcard.classList.remove("flip"); // Ensure it's on the front before switching
-            currentCardIndex = (currentCardIndex - 1 + flashcards.length) % flashcards.length;
             flashcard.querySelector(".front").textContent = flashcards[currentCardIndex].front;
             flashcard.querySelector(".back").textContent = flashcards[currentCardIndex].back;
         });
